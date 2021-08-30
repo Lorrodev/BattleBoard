@@ -1,6 +1,7 @@
 //Variable Declaration
 var mainCanvas;
 var mainCtx;
+var drawables = [];
 
 //Warning: ups must be >= fps
 var fps = 60;
@@ -13,8 +14,6 @@ var frameDeltaTime = -1;
 var updateInterval = 1000/ups;
 var timeLastUpdate = -1;
 var updateDeltaTime = -1;
-
-var gameUpdateReady = false;
 
 window.onload = setup;
 
@@ -51,4 +50,6 @@ function updateGame(){
 
 function frameUpdate(){
     mainCtx.clearRect(0, 0, 1200, 900);
+
+    drawables.forEach(drawable => drawable.draw());
 }

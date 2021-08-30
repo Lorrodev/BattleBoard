@@ -1,4 +1,4 @@
-//Add your game variavbles here:
+//Add your game variables here:
 
 
 
