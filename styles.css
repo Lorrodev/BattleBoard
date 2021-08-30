@@ -1,0 +1,19 @@
+html{
+    font-size: 20px;
+}
+
+html, body{
+    height: 100%;
+    overflow: hidden;
+}
+
+.flex-container{
+    display: flex;
+    justify-content: center;
+}
+
+#mainCanvas{
+    width: 60vw;
+    height: 45vw;
+    border: 1px solid red;
+}
