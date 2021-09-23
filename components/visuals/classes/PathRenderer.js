@@ -1,7 +1,6 @@
-class LineRenderer{
-    constructor(start, end, lineWidth, color){
-        this.start = start;
-        this.end = end;
+class PathRenderer{
+    constructor(points, lineWidth, color){
+        this.points = points;
         this.lineWidth = lineWidth;
         this.color = color;
         this.visible = true;
@@ -12,8 +11,12 @@ class LineRenderer{
     draw(){
         if(this.visible){
             mainCtx.beginPath();
-            mainCtx.moveTo(this.start.x * scaleFactor, this.start.y * scaleFactor);
-            mainCtx.lineTo(this.end.x * scaleFactor, this.end.y * scaleFactor);
+            mainCtx.moveTo(this.points[0].x * scaleFactor, this.points[0].y * scaleFactor);
+    
+            for(let p = 1; p < this.points.length; p++){
+                mainCtx.lineTo(this.points[p].x * scaleFactor, this.points[p].y * scaleFactor);
+            }
+    
             mainCtx.strokeStyle = this.color;
             mainCtx.lineWidth = this.lineWidth * scaleFactor;
             mainCtx.stroke(); 

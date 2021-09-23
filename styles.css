@@ -6,6 +6,8 @@ html{
 html, body{
     height: 100%;
     overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .flex-container{
@@ -14,9 +16,5 @@ html, body{
 }
 
 #mainCanvas{
-    width: 60vw;
-    height: 45vw;
-    margin-top: 2vh;
-    border: 3px solid white;
     background-color: #30353b;
 }

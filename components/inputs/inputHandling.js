@@ -1,5 +1,9 @@
 window.addEventListener("keydown", keyDownRecieved, false);
 window.addEventListener("keyup", keyUpRecieved, false);
+window.onresize = updateCanvasSize;
+
+var canvasWidth;
+var canvasHeight;
 
 //Default keys
 var wKey = new InputKey(87);
@@ -91,3 +95,20 @@ function keyUpRecieved(e) {
 	}
 }
 
+function updateCanvasSize(){
+    vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+    vh = Math.max(document.documentElement.clientHeight || 0, window.innerHeight || 0);
+	
+	if(vw * (1/aspectRatio) > vh){
+		canvasHeight = vh;
+		canvasWidth = vh * aspectRatio;
+	}else{
+		canvasWidth = vw;
+		canvasHeight = vw * (1/aspectRatio);
+	}
+
+	mainCanvas.width = canvasWidth;
+	mainCanvas.height = canvasHeight;
+
+	scaleFactor = canvasWidth / RESOLUTION.x; // == canvasHeight / RESOLUTION.y since both scale with aspectRatio
+}

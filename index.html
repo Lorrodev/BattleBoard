@@ -12,7 +12,7 @@
     <head>
         <meta charset="UTF-8">
         <title>JS Game Template</title>
-        <!-- Default imports (normally you should'n change these) -->
+        <!-- Default imports (normally you shouldn't change these) -->
         <script src="components/inputs/classes/InputAction.js"></script>
         <script src="components/inputs/classes/InputKey.js"></script>
         <script src="components/inputs/inputActions.js"></script>
@@ -21,17 +21,24 @@
         <script src="components/mathematics/classes/Vect2d.js"></script>
 
         <script src="components/visuals/classes/LineRenderer.js"></script>
+        <script src="components/visuals/classes/PathRenderer.js"></script>
+        <script src="components/visuals/classes/TextRenderer.js"></script>
+
+        <script src="gameObjects/classes/Rectangle.js"></script>
 
         <!-- Add your classes here: -->
         <!--script src="classes/xyz.js"></script-->
         
+        <script src="settings.js"></script>
         <script src="init.js"></script>
         <script src="game.js"></script>
         <link rel="stylesheet" href="styles.css"></link>
     </head>
     <body>
-        <div class="flex-container">
-            <canvas id="mainCanvas" width="1200" height="900"></canvas>
+        <div id="mainContainer" class="flex-container">
+            <canvas id="mainCanvas"></canvas>
         </div>
+
     </body>
+    <script>setup()</script>
 </html>
